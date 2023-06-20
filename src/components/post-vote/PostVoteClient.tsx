@@ -12,13 +12,13 @@ import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 import { Button } from '../ui/Button'
 
-interface PostVodeClientProps {
+interface PostVoteClientProps {
     postId: string
     initialVotesAmt: number
     initialVote?: VoteType | null
 }
 
-export const PostVodeClient: FC<PostVodeClientProps> = ({ postId, initialVotesAmt, initialVote }) => {
+export const PostVoteClient: FC<PostVoteClientProps> = ({ postId, initialVotesAmt, initialVote }) => {
     const { loginToast } = useCustomToast()
     const [votesAmt, setVotesAmt] = useState<number>(initialVotesAmt)
     const [currentVote, setCurrentVote] = useState(initialVote)

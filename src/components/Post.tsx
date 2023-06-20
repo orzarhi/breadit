@@ -4,7 +4,7 @@ import { MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import React, { FC, useRef } from 'react'
 import { EditorOutput } from './EditorOutput'
-import { PostVodeClient } from './post-vote/PostVodeClient'
+import { PostVoteClient } from './post-vote/PostVoteClient'
 
 type PartialVote = Pick<Vote, 'type'>
 
@@ -26,7 +26,7 @@ export const Post: FC<PostProps> = ({ subredditName, post, commentAmt, votesAmt,
     return (
         <main className='rounded-md bg-white shadow'>
             <div className='flex px-6 py-4 justify-between'>
-                <PostVodeClient
+                <PostVoteClient
                     postId={post.id}
                     initialVote={currentVote?.type}
                     initialVotesAmt={votesAmt}
