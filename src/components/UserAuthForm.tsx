@@ -33,6 +33,7 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => 
             <Button
                 onClick={loginWithGoogle}
                 isLoading={isLoading}
+                //@ts-ignore
                 size='sm'
                 className='w-full'>
                 {isLoading ? null : <Icons.google className='w-4 h-4 mr-2' />}

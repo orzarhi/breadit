@@ -7,6 +7,7 @@ import { useCustomToast } from "@/hooks/use-custom-toast"
 import { toast } from "@/hooks/use-toast"
 import { CreateSubredditPayload } from "@/lib/validators/subreddit"
 import { useMutation } from "@tanstack/react-query"
+// @ts-ignore
 import axios, { AxiosError } from "axios"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -26,6 +27,7 @@ const page = () => {
         },
         onError: (err) => {
             if (err instanceof AxiosError) {
+                // @ts-ignore
                 if (err.response?.status === 409) {
                     return toast({
                         title: 'Subreddit already exists.',
@@ -33,6 +35,7 @@ const page = () => {
                         variant: 'destructive'
                     })
                 }
+                // @ts-ignore
                 if (err.response?.status === 422) {
                     return toast({
                         title: 'Invalid subreddit name.',
@@ -40,6 +43,7 @@ const page = () => {
                         variant: 'destructive'
                     })
                 }
+                // @ts-ignore
                 if (err.response?.status === 401) {
                     return loginToast();
                 }
@@ -74,6 +78,7 @@ const page = () => {
                 </div>
 
                 <div className="flex justify-end gap-4">
+                    {/* @ts-ignore */}
                     <Button variant='subtle' onClick={() => router.back()}>Cancel</Button>
                     <Button
                         isLoading={isLoading}

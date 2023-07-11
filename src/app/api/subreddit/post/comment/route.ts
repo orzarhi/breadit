@@ -31,7 +31,6 @@ export async function PATCH(req: Request) {
         if (error instanceof z.ZodError) {
             return new Response('Invalid request data passed', { status: 422 })
         }
-        console.log("🎈", error)
         return new Response('Could not create comment, please try again later', { status: 500 })
     }
 }

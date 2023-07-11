@@ -7,15 +7,15 @@ export const GeneralFeed = async () => {
 
     const posts = await db.post.findMany({
         orderBy: {
-            createdAt: "desc"
+            createdAt: 'desc',
         },
         include: {
             votes: true,
             author: true,
             comments: true,
-            subreddit: true
+            subreddit: true,
         },
-        take: INFINITE_SCROLLING_PAGINATION_RESULTS
+        take: INFINITE_SCROLLING_PAGINATION_RESULTS, // 4 to demonstrate infinite scroll, should be higher in production
     })
     return <PostFeed initialPosts={posts} />
 
