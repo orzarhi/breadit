@@ -26,15 +26,15 @@ const renderers = {
 
 export const EditorOutput: FC<EditorOutputProps> = ({ content }) => {
     return (
-        // @ts-expect-error
+        //@ts-ignore
         <Output data={content} style={style} className='text-sm' renderers={renderers} />
     )
 }
 
 function CustomCodeRenderer({ data }: any) {
     return (
-        <pre className='bg-gray-800 p-4 rounded-md'>
-            <code className='text-gray-100 text-sm'>{data.code}</code>
+        <pre className='p-4 bg-gray-800 rounded-md'>
+            <code className='text-sm text-gray-100'>{data.code}</code>
         </pre>
     )
 }
